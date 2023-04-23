@@ -12,46 +12,45 @@ private:
     int denominator;
 
 public:
-    Fraction();
+   // Fraction();
     Fraction(int numerator, int denominator);
+    int getNumerator() const;
+    void setNumerator(int);
+    int getDenominator() const;
+    void setDenominator(int);
 
-    Fraction getNumerator();
-    void setNumerator();
-    Fraction getDenominator();
-    void setDenominator();
+    Fraction operator+(const Fraction& other);
+    Fraction operator+(float other);
 
-    Fraction operator+(const Fraction& other) const;
-    Fraction operator+(const float other) const;
+    Fraction operator-(const Fraction& other);
+    Fraction operator-(float other);
 
-    Fraction operator-(const Fraction& other) const;
-    Fraction operator-(const float other) const;
+    Fraction operator*(const Fraction& other);
+    Fraction operator*(float other);
 
-    Fraction operator*(const Fraction& other) const;
-    Fraction operator*(const float other) const;
+    Fraction operator/(const Fraction& other);
+    Fraction operator/(float other);
 
-    Fraction operator/(const Fraction& other) const;
-    Fraction operator/(const float other) const;
+    bool operator==(const Fraction& other);
+    bool operator==(float other);
 
-    bool operator==(const Fraction& other) const;
-    bool operator==(const float other) const;
+    bool operator<(const Fraction& other);
+    bool operator<(float other);
 
-    bool operator<(const Fraction& other) const;
-    bool operator<(const float other) const;
+    bool operator>(const Fraction& other);
+    bool operator>(float other);
 
-    bool operator>(const Fraction& other) const;
-    bool operator>(const float other) const;
+    bool operator<=(const Fraction& other);
+    bool operator<=(float other);
 
-    bool operator<=(const Fraction& other) const;
-    bool operator<=(const float other) const;
+    bool operator>=(const Fraction& other);
+    bool operator>=(float other);
 
-    bool operator>=(const Fraction& other) const;
-    bool operator>=(const float other) const;
+    Fraction operator++(int) ;
+    Fraction &operator++() ;
 
-    Fraction operator++(int) const;
-    Fraction operator++() const;
-
-    Fraction operator--(int) const;
-    Fraction operator--() const;
+    Fraction operator--(int) ;
+    Fraction operator--() ;
 
     friend ostream& operator<<(std::ostream& os, const Fraction& other);
     friend istream& operator>>(std::istream& is, Fraction& other);
